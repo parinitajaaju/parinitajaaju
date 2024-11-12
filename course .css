@@ -1,0 +1,367 @@
+/* General Reset and Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Courier New', Courier, monospace;
+    color: #333;
+    background-color: #f8f9fa;
+    line-height: 1.6;
+    background-image: radial-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+                      radial-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+    background-size: 10px 10px;
+    background-position: 0 0, 5px 5px;
+    animation: fadeInBackground 2s ease-in-out, slideUpBody 1s ease-out; /* Smooth background fade-in and slide-up body */
+}
+
+@keyframes fadeInBackground {
+    0% {
+        background-color: #f8f9fa;
+    }
+    100% {
+        background-color: #fff;
+    }
+}
+
+@keyframes slideUpBody {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Header Section */
+.header {
+    position: relative;
+    background-color: #93cbcb;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-bottom: 40px;
+    animation: slideDown 0.5s ease-out; /* Header slide down */
+}
+
+@keyframes slideDown {
+    0% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.header nav {
+    text-align: center;
+}
+
+.header nav a {
+    margin: 0 20px;
+    text-decoration: none;
+    color: #334444;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.5rem;
+    transition: color 0.3s ease, transform 0.3s ease, letter-spacing 0.3s ease;
+}
+
+/* Hover effect for header nav */
+.header nav a:hover {
+    color: #ffd900;
+    transform: translateY(-5px);
+    letter-spacing: 2px;
+}
+
+/* Section Styling */
+.section {
+    font-size: 1rem;
+    color: #333;
+    max-width: 1000px;
+    margin: 20px auto;
+    line-height: 1.5;
+    background: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    border: 2px dashed #ddd;
+    box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    text-align: center;
+    animation: fadeInSection 1.5s ease-out; /* Fade-in effect for sections */
+}
+
+@keyframes fadeInSection {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section:hover {
+    transform: scale(1.02); /* Slight zoom effect on hover */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+/* Section Title Styling */
+.section-title {
+    font-size: 3rem;
+    color: #008080;
+    letter-spacing: 3px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    animation: slideInFromLeft 0.7s ease-out; /* Title slide-in from left */
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Image Container Styling */
+.image-container {
+    text-align: center;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeInImage 1.2s ease-out forwards; /* Fade-in effect for images */
+}
+
+@keyframes fadeInImage {
+    0% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.image-container img:hover {
+    transform: scale(1.05);
+}
+
+/* Rectangle Image Container */
+.rectangle-image-container {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.rectangle-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* p5.js Canvas Styling */
+#p5CanvasContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    border: 3px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+    max-width: 620px;
+    animation: fadeInCanvas 1.5s ease-in-out; /* Fade-in effect for p5.js canvas */
+}
+
+@keyframes fadeInCanvas {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* p5.js Description Styling */
+.p5js-description {
+    font-size: 1rem;
+    color: #333;
+    max-width: 800px;
+    margin: 20px auto;
+    line-height: 1.5;
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    border: 2px dashed #ddd;
+    box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    animation: fadeInDescription 1.2s ease-out; /* Fade-in effect for descriptions */
+}
+
+@keyframes fadeInDescription {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Programming Course Section Styling */
+.programming-course {
+    background-color: #fff;
+    padding: 30px;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 1200px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border: 3px dashed #008080;
+    animation: fadeInCourse 1.5s ease-out; /* Fade-in effect for programming course */
+}
+
+@keyframes fadeInCourse {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.programming-course .section-title {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2.5rem;
+    color: #008080;
+    letter-spacing: 3px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Scratch Description Styling */
+.scratch-description {
+    font-family: 'Courier', Courier, monospace;
+    font-size: 1rem;
+    color: #000;
+    line-height: 1.6;
+    padding: 20px;
+    margin: 20px auto;
+    width: 100%;
+    max-width: 900px;
+    background: #fff;
+    border: 2px solid #333;
+    border-radius: 8px;
+    box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.1);
+    word-wrap: break-word;
+    transition: transform 0.3s ease-in-out;
+    animation: fadeInScratch 1.5s ease-out; /* Fade-in effect for Scratch description */
+}
+
+@keyframes fadeInScratch {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#scratchedSection .section-title {
+    font-size: 3rem;
+    color: #008080;
+    letter-spacing: 3px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    text-decoration: none;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 40px 20px;
+    background-color: #f2f2f2;
+    border-top: 2px dashed #ccc;
+    text-align: center;
+    animation: slideInFromLeft 1s ease-out;
+}
+
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    animation: fadeInContactLinks 1.5s ease-out; /* Fade-in effect for contact links */
+}
+
+@keyframes fadeInContactLinks {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.contact-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-align: center;
+}
+
+/* Social Icons */
+.social-icon {
+    width: 20px;
+    height: 20px;
+}
+.contact-links a[href*="instagram.com"] .social-icon {
+    width: 30px;
+}
